@@ -3,7 +3,7 @@ RECORD CHECK  -  my version
 ===========================
 
 Name  :
-Lane  : IT      (delete two)
+Lane  : IT
 Date  :
 
 Run it:   python template.py
