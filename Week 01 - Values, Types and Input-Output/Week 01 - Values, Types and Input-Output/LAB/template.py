@@ -2,9 +2,9 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
+Name  : Daniel Negassi
 Lane  : IT
-Date  :
+Date  : 20/10/2026
 
 Run it:   python template.py
 
