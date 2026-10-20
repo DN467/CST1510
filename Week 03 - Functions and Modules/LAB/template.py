@@ -2,9 +2,9 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
-Lane  :  AI / Cyber / IT      (delete two)
-Date  :
+Name  : Daniel Negassi
+Lane  : IT 
+Date  : 20/10/2026
 
 Run it:   python template.py
 
@@ -27,6 +27,21 @@ Delete these instructions as you replace them with your code.
 #    Give each function a one-line docstring saying what it does.
 
 # your function(s) go here
+def status_of(percent):
+    """Returns a status based on usage percentage."""
+
+    if percent >= 100:
+        return "OVER LIMIT"
+    elif percent >= 90:
+        return "WARNING"
+    else:
+        return "OK"
+def check(value, limit):
+        """Returns free space and percentage."""
+
+        difference = limit - value
+        percent = (value / limit) * 100
+        return difference, percent
 
 
 # ==================================================================== INPUT
@@ -36,9 +51,9 @@ Delete these instructions as you replace them with your code.
 #    - the second is a NUMBER (use float(), not int())
 #    - the third  is a NUMBER (use float(), not int())
 
-label = ""      # replace with an input() call
-value = 0.0     # replace with an input() call, converted
-limit = 0.0     # replace with an input() call, converted
+label = input("Enter hostname: ")      # replace with an input() call
+value = float(input("Enter GB used: "))     # replace with an input() call, converted
+limit = float(input("Enter total GB: "))     # replace with an input() call, converted
 
 
 # ================================================================== PROCESS
@@ -48,9 +63,8 @@ limit = 0.0     # replace with an input() call, converted
 #                difference and percentage inline, not in a function.
 #    Typical   : call check() to get the difference and percentage instead.
 
-difference = 0.0   # replace with your code
-percent = 0.0       # replace with your code
-status = ""          # replace with your code
+difference, percent = check(value, limit)   # replace with your code
+status = status_of(percent)          # replace with your code
 
 
 # =================================================================== OUTPUT
@@ -69,7 +83,12 @@ print("=" * 34)
 print(f"  RECORD CHECK  -  {label}")
 print("=" * 34)
 
-# your report lines go here
+print(f"Hostname    : {label}")
+print(f"Used        : {value: .2f}")
+print(f"Total       : {limit: .2f}")
+print(f"Free        : {difference: .2f}")
+print(f"Percent     : {percent: .2f}%")
+print(f"Status      : {status}")
 
 print("=" * 34)
 

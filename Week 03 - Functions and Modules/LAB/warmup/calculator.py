@@ -19,7 +19,7 @@ Otherwise, ask for a new first number and store it in n1.
 def add(n1, n2):
     return n1 + n2
 
-def suntract(n1, n2):
+def subtract(n1, n2):
     return n1 - n2
 
 def multiply(n1, n2):
@@ -39,12 +39,26 @@ while keep_going:
     if operator == '+':
         result = add(n1, n2)
 
+    elif operator == '_':
+        result = subtract(n1, n2)
+
+    elif operator == '*':
+        result = multiply(n1, n2)
+    
+    elif operator == '/':
+        result = divide(n1, n2)
+
     print(f"{n1} {operator} {n2} = {result}")
 
     choice = input("Type 'y' to continue with the result, or 'n' to start over: ")
     if choice == 'y':
         n1 = result 
-    elif choice == 'q' :
+
+    elif choice == 'n':
+      n1 = float(input("Enter 1st number: "))
+
+    elif choice == 'q':
+
       keep_going = False
       
 
